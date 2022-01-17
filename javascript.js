@@ -28,26 +28,6 @@ document.getElementById("startreset").onclick = function(){
         startCountdown();
         //generate a new QnA
         generateQA();
-        var x=1+Math.round(9*Math.random());
-        var y=1+Math.round(9*Math.random());
-        var correctAnswer = x*y;
-        document.getElementById("question").innerHTML = x+"x"+y;
-        var correctPosition = 1+Math.round(3*Math.random());
-        document.getElementById("box"+correctPosition).innerHTML = correctAnswer; //fill one box with the correct answer
-
-        //fill other boxes with wrong answers
-        var answers = [correctAnswer];
-        for(i=1;i<5;i++){
-            if(i != correctPosition)
-            {
-                var wrongAnswer;
-                do{
-                    wrongAnswer = (1+Math.round(9*Math.random()))*(1+Math.round(9*Math.random())); // a wrong answer
-                }while(answers,indexOf(wrongAnswer)>-1)
-                document.getElementById("box"+i).innerHTML=wrongAnswer;
-                answers.push(wrongAnswer);
-            }
-        }
     }
 }
 //Clicking on answer box
@@ -124,5 +104,24 @@ function show(Id){
 }
 //generate Question and multiple answers
 function generateQA(){
+    var x=1+Math.round(9*Math.random());
+        var y=1+Math.round(9*Math.random());
+        var correctAnswer = x*y;
+        document.getElementById("question").innerHTML = x+"x"+y;
+        var correctPosition = 1+Math.round(3*Math.random());
+        document.getElementById("box"+correctPosition).innerHTML = correctAnswer; //fill one box with the correct answer
 
+        //fill other boxes with wrong answers
+        var answers = [correctAnswer];
+        for(i=1;i<5;i++){
+            if(i != correctPosition)
+            {
+                var wrongAnswer;
+                do{
+                    wrongAnswer = (1+Math.round(9*Math.random()))*(1+Math.round(9*Math.random())); // a wrong answer
+                }while(answers.indexOf(wrongAnswer)>-1)
+                document.getElementById("box"+i).innerHTML=wrongAnswer;
+                answers.push(wrongAnswer);
+            }
+        }
 }
