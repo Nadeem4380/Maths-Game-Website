@@ -2,7 +2,7 @@ var playing=false;
 var score;
 var action;
 var timeremaining;
-var corretAnswer;
+var correctAnswer;
 //if we click on the start/reset
 document.getElementById("startreset").onclick = function(){
     //if we are playing
