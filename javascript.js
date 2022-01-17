@@ -35,7 +35,7 @@ for(i=1;i<5;i++){
     document.getElementById("box"+i).onclick = function(){
         //check if we are playing
         if(playing==true){//yes
-            if(this.innerhtml == corretAnswer){
+            if(this.innerhtml == correctAnswer){
                 //correct answer
                 score++;
                 document.getElementById("scorevalue").innerHTML=score;
